@@ -2,15 +2,38 @@ package tests.tvs;
 
 import helpers.JSExec;
 import helpers.ScreenShotPage;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.StartPage;
 import pages.TVAndMultimediaPage;
 import pages.TVProductPage;
 import tests.BaseTest;
 
-public class TVsProductPage1_Test extends BaseTest {
+public class TVsProductPage_Test extends BaseTest {
     @Test
     public void selectedProduct_Is_TVLEDSamsungQE75Q950TSUXRUGrey() {
+        String company = "Samsung";
+        String diagonalRangeFrom = "60";
+        String diagonalRangeUpTo = "80";
+        String screenRefreshRate = "120";
+
+        TVProductPage tvProductPage = getProduct(company, diagonalRangeFrom, diagonalRangeUpTo, screenRefreshRate);
+        String actualTitle = tvProductPage.getPageTitle();
+        String actualInches = tvProductPage.getInchesValue();
+        String actualHertz = tvProductPage.getHertzValue();
+        //String actualBackLight = tvProductPage.getBacklightType();
+
+        String expectedTitle = "Технические характеристики 75\" (189 см) Телевизор LED Samsung QE75Q950TSUXRU серый | 8165296 . Интернет-магазин DNS";
+        String expectedInches = "75\"";
+        String expectedHertz = "120 Гц";
+        //String expectedBackLight = "Direct LED";
+        Assertions.assertEquals(expectedTitle, actualTitle);
+        Assertions.assertEquals(expectedInches, actualInches);
+        Assertions.assertEquals(expectedHertz, actualHertz);
+        //Assertions.assertEquals(expectedBackLight, actualBackLight);
+    }
+
+    public TVProductPage getProduct(String company, String diagonalRangeFrom, String diagonalRangeUpTo, String screenRefreshRate){
         StartPage startPage = new StartPage(driver);
         startPage.openPage();
         startPage.buttonChooseACityYesClick();
@@ -21,13 +44,13 @@ public class TVsProductPage1_Test extends BaseTest {
         TVAndMultimediaPage tvAndMultimediaPage = new TVAndMultimediaPage(driver);
         tvAndMultimediaPage.hideHeader();
         JSExec.scrollBy(0, 900);
-        tvAndMultimediaPage.chBoxCompanyFilterClick("Samsung");
+        tvAndMultimediaPage.chBoxCompanyFilterClick(company);
         JSExec.scrollBy(0, 600);
         tvAndMultimediaPage.dropDownMenuDiagonalClick();
-        tvAndMultimediaPage.diagonalRangeFromSend("60");
-        tvAndMultimediaPage.diagonalRangeUpToSend("80");
+        tvAndMultimediaPage.diagonalRangeFromSend(diagonalRangeFrom);
+        tvAndMultimediaPage.diagonalRangeUpToSend(diagonalRangeUpTo);
         tvAndMultimediaPage.dropDownMenuScreenRefreshRateClick();
-        tvAndMultimediaPage.chBoxScreenRefreshRateClick("120");
+        tvAndMultimediaPage.chBoxScreenRefreshRateClick(screenRefreshRate);
         JSExec.scrollBy(0, 650);
         tvAndMultimediaPage.dropDownMenuBacklightTypeClick();
         tvAndMultimediaPage.chBoxBacklightTypeClick();
@@ -44,5 +67,7 @@ public class TVsProductPage1_Test extends BaseTest {
         JSExec.scrollBy(0, 700);
         tvAndMultimediaProductPage.characteristicsClick();
         ScreenShotPage.getScreenShot("screens\\4_ScreenTVCharacteristicsProduct.png");
+
+        return new TVProductPage(driver);
     }
 }
