@@ -39,4 +39,9 @@ public class SeleniumListener implements WebDriverListener {
     public void afterGet(WebDriver driver, String url) {
         logger.info("После получения URL " + url);
     }
+
+    @Override
+    public void afterGetTitle(WebDriver driver, String result) {
+        logger.info("После получения титула: " + "\"" + result + "\"");
+    }
 }

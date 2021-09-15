@@ -2,6 +2,7 @@ package helpers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,9 +26,14 @@ public class JSExec {
     }
 
     // скролл до заданного элемента
-    public void scrollIntoView(boolean upDown, WebElement element) {
-        String script = "arguments[0].scrollIntoView(" + upDown + ");";
+    public static void scrollIntoView(WebElement element) {
+        String script = "arguments[0].scrollIntoView(true);";
         js.executeScript(script, element);
+    }
+
+    public static void scrollIntoView(By by) {
+        String script = "arguments[0].scrollIntoView(true);";
+        js.executeScript(script, by);
     }
 
     // Установка невидимости веб элемента
