@@ -2,7 +2,6 @@ package tests.tvs;
 
 import helpers.JSExec;
 import helpers.ScreenShotPage;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pages.StartPage;
 import pages.TVAndMultimediaPage;
@@ -18,19 +17,17 @@ public class TVsProductPage_Test extends BaseTest {
         String screenRefreshRate = "120";
 
         TVProductPage tvProductPage = getProduct(company, diagonalRangeFrom, diagonalRangeUpTo, screenRefreshRate);
-        String actualTitle = tvProductPage.getPageTitle();
-        String actualInches = tvProductPage.getInchesValue();
-        String actualHertz = tvProductPage.getHertzValue();
-        //String actualBackLight = tvProductPage.getBacklightType();
 
         String expectedTitle = "Технические характеристики 75\" (189 см) Телевизор LED Samsung QE75Q950TSUXRU серый | 8165296 . Интернет-магазин DNS";
+        String expectedModel = "Samsung QE75Q950TSUXRU";
         String expectedInches = "75\"";
         String expectedHertz = "120 Гц";
-        //String expectedBackLight = "Direct LED";
-        Assertions.assertEquals(expectedTitle, actualTitle);
-        Assertions.assertEquals(expectedInches, actualInches);
-        Assertions.assertEquals(expectedHertz, actualHertz);
-        //Assertions.assertEquals(expectedBackLight, actualBackLight);
+        String expectedBackLight = "Direct LED";
+        TVsProductPageAssert tVsProductPageAssert = new TVsProductPageAssert(tvProductPage);
+        tVsProductPageAssert.pageTitleEquals(expectedTitle);
+        tVsProductPageAssert.pageModelEquals(expectedModel);
+        tVsProductPageAssert.pageInchesEquals(expectedInches);
+        tVsProductPageAssert.pageHertzEquals(expectedHertz);
     }
 
     public TVProductPage getProduct(String company, String diagonalRangeFrom, String diagonalRangeUpTo, String screenRefreshRate){

@@ -11,12 +11,18 @@ public class TVProductPage extends BasePage{
     }
 
     String characteristicsLinkXpath = "//a[contains(text(), 'Характеристики')]";
+    String modelValueXpath = "//span[text()=' Samsung QE75Q950TSUXRU ']";
     String inchesValueXpath = "//span[text()=' 75\" ']";
     String hertzValueXpath = "//span[text()=' 120 Гц ']";
-    String backlightTypeXpath = "//div[@id='pcv-ePYSch']";
+    String backlightTypeXpath = "";
 
     public String getPageTitle(){
         return eventDriver.getTitle();
+    }
+
+    public String getModelValue(){
+        WebElement modelValue = eventDriver.findElement(By.xpath(modelValueXpath));
+        return modelValue.getText();
     }
 
     public String getInchesValue(){
@@ -40,6 +46,4 @@ public class TVProductPage extends BasePage{
         WaitFor.clickabilityOfElement(characteristicsLink);
         characteristicsLink.click();
     }
-
-
 }
