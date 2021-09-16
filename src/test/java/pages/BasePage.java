@@ -20,6 +20,7 @@ public class BasePage {
 
         // Инициализация ожидания - 10 секунд
         WaitFor.initWait(driver ,Duration.ofSeconds(10), Duration.ofMillis(100));
+        WaitFor.initFluentWait(driver ,Duration.ofSeconds(10), Duration.ofMillis(100));
         JSExec.initJS(driver);
     }
 }

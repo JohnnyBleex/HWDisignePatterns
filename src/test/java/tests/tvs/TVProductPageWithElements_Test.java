@@ -3,14 +3,14 @@ package tests.tvs;
 import helpers.JSExec;
 import helpers.ScreenShotPage;
 import org.junit.jupiter.api.Test;
-import pages.StartPage;
-import pages.TVAndMultimediaPage;
 import pages.TVProductPage;
+import pages.withelements.StartPageWithElements;
+import pages.withelements.TVAndMultimediaPageWithElements;
 import tests.BaseTest;
 
-public class TVsProductPage_Test extends BaseTest {
+public class TVProductPageWithElements_Test extends BaseTest {
     @Test
-    public void selectedProduct_Is_TVLEDSamsungQE75Q950TSUXRUGrey() {
+    public void selectedProduct_Is_TVLEDSamsungQE75Q950TSUXRUGrey(){
         String company = "Samsung";
         String diagonalRangeFrom = "60";
         String diagonalRangeUpTo = "80";
@@ -32,32 +32,32 @@ public class TVsProductPage_Test extends BaseTest {
     }
 
     public TVProductPage getProduct(String company, String diagonalRangeFrom, String diagonalRangeUpTo, String screenRefreshRate){
-        StartPage startPage = new StartPage(driver);
-        startPage.openPage();
-        startPage.buttonChooseACityYesClick();
-        startPage.linkTVAndMultimediaMove();
-        startPage.linkTVSClick();
+        StartPageWithElements startPageWithElements = new StartPageWithElements(driver);
+        startPageWithElements.openPage();
+        startPageWithElements.buttonChooseACityYesClick();
+        startPageWithElements.linkTVAndMultimediaMove();
+        startPageWithElements.linkTVSClick();
         ScreenShotPage.getScreenShot("screens\\1_ScreenTVAndMultimediaPage.png");
 
-        TVAndMultimediaPage tvAndMultimediaPage = new TVAndMultimediaPage(driver);
-        tvAndMultimediaPage.hideHeader();
+        TVAndMultimediaPageWithElements tvAndMultimediaPageWithElements = new TVAndMultimediaPageWithElements(driver);
+        tvAndMultimediaPageWithElements.hideHeader();
         JSExec.scrollBy(0, 900);
-        tvAndMultimediaPage.chBoxCompanyFilterClick(company);
+        tvAndMultimediaPageWithElements.chBoxCompanyFilterClick(company);
         JSExec.scrollBy(0, 600);
-        tvAndMultimediaPage.dropDownMenuDiagonalClick();
-        tvAndMultimediaPage.diagonalRangeFromSend(diagonalRangeFrom);
-        tvAndMultimediaPage.diagonalRangeUpToSend(diagonalRangeUpTo);
-        tvAndMultimediaPage.dropDownMenuScreenRefreshRateClick();
-        tvAndMultimediaPage.chBoxScreenRefreshRateClick(screenRefreshRate);
+        tvAndMultimediaPageWithElements.dropDownMenuDiagonalClick();
+        tvAndMultimediaPageWithElements.diagonalRangeFromSend(diagonalRangeFrom);
+        tvAndMultimediaPageWithElements.diagonalRangeUpToSend(diagonalRangeUpTo);
+        tvAndMultimediaPageWithElements.dropDownMenuScreenRefreshRateClick();
+        tvAndMultimediaPageWithElements.chBoxScreenRefreshRateClick(screenRefreshRate);
         JSExec.scrollBy(0, 650);
-        tvAndMultimediaPage.dropDownMenuBacklightTypeClick();
-        tvAndMultimediaPage.chBoxBacklightTypeClick();
-        tvAndMultimediaPage.buttonApplyClick();
-        JSExec.scrollBy(0, -2000);
-        tvAndMultimediaPage.dropDownMenuSortingPriceClick();
-        tvAndMultimediaPage.sortingPriceExpensiveClick();
+        tvAndMultimediaPageWithElements.dropDownMenuBacklightTypeClick();
+        tvAndMultimediaPageWithElements.chBoxBacklightTypeClick();
+        tvAndMultimediaPageWithElements.buttonApplyClick();
+        JSExec.scrollBy(0, -1000);
+        tvAndMultimediaPageWithElements.dropDownMenuSortingPriceShow();
+        tvAndMultimediaPageWithElements.sortingPriceExpensiveClick();
         ScreenShotPage.getScreenShot("screens\\2_ScreenTVAndMultimediaPageSortDearFirst.png");
-        tvAndMultimediaPage.firstElementClick();
+        tvAndMultimediaPageWithElements.linkFirstElementClick();
         ScreenShotPage.getScreenShot("screens\\3_ScreenTVFirstProductPage.png");
 
         TVProductPage tvAndMultimediaProductPage = new TVProductPage(driver);

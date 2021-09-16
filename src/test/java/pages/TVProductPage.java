@@ -14,7 +14,7 @@ public class TVProductPage extends BasePage{
     String modelValueXpath = "//span[text()=' Samsung QE75Q950TSUXRU ']";
     String inchesValueXpath = "//span[text()=' 75\" ']";
     String hertzValueXpath = "//span[text()=' 120 Гц ']";
-    String backlightTypeXpath = "";
+    String backlightTypeXpath = "//a[contains(text(), 'Direct LED')]";
 
     public String getPageTitle(){
         return eventDriver.getTitle();

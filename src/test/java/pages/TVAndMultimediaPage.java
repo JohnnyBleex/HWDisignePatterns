@@ -22,10 +22,10 @@ public class TVAndMultimediaPage extends BasePage {
     String dropDownMenuScreenRefreshRateXpath = "//span[contains(text(), 'Частота обновления экрана (Гц)')]";
     String chBoxScreenRefreshRateXpath = "//span[contains(text(), 'hertz')]";
     String dropDownMenuBacklightTypeXpath = "//div[@data-id='f[rh2]']";
-    String BacklightTypeXpath = "//span[contains(text(), 'Direct LED')]";
+    String backlightTypeXpath = "//span[contains(text(), 'Direct LED')]";
     String buttonApplyXpath = "//button[text()='Применить']";
     String dropDownMenuSortingPriceXpath = "//div[@data-id='order']";
-    String SortingPriceExpensiveXpath = "//span[contains(text(), 'Сначала дорогие')]";
+    String sortingPriceExpensiveXpath = "//span[contains(text(), 'Сначала дорогие')]";
     String firstElementXpath = "//div[@data-id='product']/a";
 
     public void hideHeader(){
@@ -85,8 +85,8 @@ public class TVAndMultimediaPage extends BasePage {
     }
 
     public void chBoxBacklightTypeClick(){
-        WaitFor.visibilityOfElementLocated(By.xpath(BacklightTypeXpath));
-        WebElement BacklightType = eventDriver.findElement(By.xpath(BacklightTypeXpath));
+        WaitFor.visibilityOfElementLocated(By.xpath(backlightTypeXpath));
+        WebElement BacklightType = eventDriver.findElement(By.xpath(backlightTypeXpath));
         WaitFor.clickabilityOfElement(BacklightType);
         BacklightType.click();
     }
@@ -106,8 +106,8 @@ public class TVAndMultimediaPage extends BasePage {
     }
 
     public void sortingPriceExpensiveClick(){
-        WaitFor.visibilityOfElementLocated(By.xpath(SortingPriceExpensiveXpath));
-        WebElement SortingPriceExpensive = eventDriver.findElement(By.xpath(SortingPriceExpensiveXpath));
+        WaitFor.visibilityOfElementLocated(By.xpath(sortingPriceExpensiveXpath));
+        WebElement SortingPriceExpensive = eventDriver.findElement(By.xpath(sortingPriceExpensiveXpath));
         WaitFor.clickabilityOfElement(SortingPriceExpensive);
         SortingPriceExpensive.click();
     }
