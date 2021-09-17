@@ -1,37 +1,37 @@
 package tests.tvs;
 
 import org.junit.jupiter.api.Assertions;
-import pages.withelements.TVProductPageWithElements;;
+import steps.TVProductPageSteps;
 
 public class TVsProductPageAssert {
-    private TVProductPageWithElements page;
+    private TVProductPageSteps tvProductPageSteps;
 
-    public TVsProductPageAssert(TVProductPageWithElements page){
-        this.page = page;
+    public TVsProductPageAssert(TVProductPageSteps tvProductPageSteps){
+        this.tvProductPageSteps = tvProductPageSteps;
     }
 
     public void pageTitleEquals(String expectedTitle){
-        String actualTitle = page.getPageTitle();
+        String actualTitle = tvProductPageSteps.getTitle();
         Assertions.assertEquals(expectedTitle, actualTitle, "Ошибка! Заголовок страницы не соответствует ожидаемому!");
     }
 
     public void pageModelEquals(String expectedModel){
-        String actualModel = page.getModelValue();
-        Assertions.assertEquals(expectedModel, actualModel, "Ошибка! Модель не соответствует ожидаемому!");
+        String actualModel = tvProductPageSteps.getModelValue();
+        Assertions.assertTrue(actualModel.contains(expectedModel), "Ошибка! Модель не соответствует ожидаемому!");
     }
 
     public void pageInchesEquals(String expectedInches){
-        String actualInches = page.getInchesValue();
-        Assertions.assertEquals(expectedInches, actualInches, "Ошибка! Диагональ не соответствует ожидаемому!");
+        String actualInches = tvProductPageSteps.getInchesValue();
+        Assertions.assertTrue(actualInches.contains(expectedInches), "Ошибка! Диагональ не соответствует ожидаемому!");
     }
 
     public void pageHertzEquals(String expectedHertz){
-        String actualHertz = page.getHertzValue();
-        Assertions.assertEquals(expectedHertz, actualHertz, "Ошибка! Герци не соответствуют ожидаемому!");
+        String actualHertz = tvProductPageSteps.getHertzValue();
+        Assertions.assertTrue(actualHertz.contains(expectedHertz), "Ошибка! Герци не соответствуют ожидаемому!");
     }
 
     public void pageBackLight(String expectedBackLight){
-        String actualBackLight = page.getBacklightType();
+        String actualBackLight = tvProductPageSteps.getBacklightType();
         Assertions.assertEquals(expectedBackLight, actualBackLight, "Ошибка! Подсветка экрана не соответствует ожидаемому!");
     }
 }

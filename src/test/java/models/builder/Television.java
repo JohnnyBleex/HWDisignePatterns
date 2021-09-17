@@ -3,6 +3,7 @@ package models.builder;
 import models.valueobjects.Company;
 import models.valueobjects.DiagonalRange;
 import models.valueobjects.ScreenRefreshRate;
+import models.valueobjects.TypeBackLight;
 
 import java.io.Serializable;
 
@@ -14,16 +15,20 @@ public class Television implements Serializable {
     private int diagonal;
     private ScreenRefreshRate screenRefreshRate;
     private int refreshRate;
+    private TypeBackLight typeBackLight;
+    private String backLight;
 
     public Television(){
 
     }
 
-    public Television(Company company, DiagonalRange diagonalRangeFrom, DiagonalRange diagonalRangeUpTo, ScreenRefreshRate screenRefreshRate) {
+    public Television(Company company, DiagonalRange diagonalRangeFrom, DiagonalRange diagonalRangeUpTo,
+                      ScreenRefreshRate screenRefreshRate, TypeBackLight typeBackLight) {
         this.company = company;
         this.diagonalRangeFrom = diagonalRangeFrom;
         this.diagonalRangeUpTo = diagonalRangeUpTo;
         this.screenRefreshRate = screenRefreshRate;
+        this.typeBackLight = typeBackLight;
     }
 
     public void setCompany(Company company) {
@@ -80,5 +85,21 @@ public class Television implements Serializable {
 
     public int getRefreshRate() {
         return this.refreshRate;
+    }
+
+    public TypeBackLight getTypeBackLight() {
+        return typeBackLight;
+    }
+
+    public void setTypeBackLight(TypeBackLight typeBackLight) {
+        this.typeBackLight = typeBackLight;
+    }
+
+    public String getBackLight() {
+        return backLight;
+    }
+
+    public void setBackLight(String backLight) {
+        this.backLight = backLight;
     }
 }

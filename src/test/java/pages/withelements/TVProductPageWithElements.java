@@ -42,7 +42,7 @@ public class TVProductPageWithElements extends BasePage {
     }
 
     public void characteristicsClick(){
-        Link linkCharacteristics = new Link(driver, By.xpath(characteristicsLinkXpath));
+        Link linkCharacteristics = new Link(eventDriver, By.xpath(characteristicsLinkXpath));
         linkCharacteristics.click();
     }
 }

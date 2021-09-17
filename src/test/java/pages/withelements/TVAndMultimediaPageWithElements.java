@@ -19,7 +19,7 @@ public class TVAndMultimediaPageWithElements extends BasePage {
     String dropDownMenuScreenRefreshRateXpath = "//span[contains(text(), 'Частота обновления экрана (Гц)')]";
     String chBoxScreenRefreshRateXpath = "//span[contains(text(), 'hertz')]";
     String dropDownMenuBacklightTypeXpath = "//div[@data-id='f[rh2]']";
-    String backlightTypeXpath = "//span[contains(text(), 'Direct LED')]";
+    String backlightTypeXpath = "//span[contains(text(), 'backlight')]";
     String buttonApplyXpath = "//button[text()='Применить']";
     String dropDownMenuSortingPriceXpath = "//div[@data-id='order']";
     String sortingPriceExpensiveXpath = "//span[contains(text(), 'Сначала дорогие')]";
@@ -77,7 +77,8 @@ public class TVAndMultimediaPageWithElements extends BasePage {
         dropDownMenuBacklightType.show();
     }
 
-    public void chBoxBacklightTypeClick(){
+    public void chBoxBacklightTypeClick(String backlight){
+        backlightTypeXpath = backlightTypeXpath.replace("backlight", backlight);
         CheckBox checkBoxBacklightType = new CheckBox(eventDriver, By.xpath(backlightTypeXpath));
         checkBoxBacklightType.setChecked(true);
     }
