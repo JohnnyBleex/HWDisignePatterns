@@ -1,12 +1,13 @@
-package pages;
+package pages.withelements;
 
-import helpers.WaitFor;
+import elements.Link;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import pages.BasePage;
 
-public class TVProductPage extends BasePage{
-    public TVProductPage(WebDriver driver) {
+public class TVProductPageWithElements extends BasePage {
+    public TVProductPageWithElements(WebDriver driver) {
         super(driver);
     }
 
@@ -41,9 +42,7 @@ public class TVProductPage extends BasePage{
     }
 
     public void characteristicsClick(){
-        WaitFor.visibilityOfElementLocated(By.xpath(characteristicsLinkXpath));
-        WebElement characteristicsLink = eventDriver.findElement(By.xpath(characteristicsLinkXpath));
-        WaitFor.clickabilityOfElement(characteristicsLink);
-        characteristicsLink.click();
+        Link linkCharacteristics = new Link(driver, By.xpath(characteristicsLinkXpath));
+        linkCharacteristics.click();
     }
 }

@@ -6,10 +6,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.BasePage;
-import pages.StartPage;
 
 public class StartPageWithElements extends BasePage {
-    private Logger logger = LogManager.getLogger(StartPage.class);
+    private Logger logger = LogManager.getLogger(StartPageWithElements.class);
 
     public StartPageWithElements(WebDriver driver) {
         super(driver);

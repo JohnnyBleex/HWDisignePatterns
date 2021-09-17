@@ -1,16 +1,11 @@
 package helpers;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class JSExec {
-    // Логгер
-    private static Logger logger = LogManager.getLogger(JSExec.class);
-
     // Исполнитель JS скриптов
     protected static JavascriptExecutor js;
 

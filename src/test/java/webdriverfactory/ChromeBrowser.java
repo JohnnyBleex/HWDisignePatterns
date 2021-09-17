@@ -11,21 +11,7 @@ import org.openqa.selenium.remote.CapabilityType;
 
 public class ChromeBrowser {
     public static WebDriver getDriver(PageLoadStrategyName strategyName){
-        PageLoadStrategy strategy = null;
-
-        switch (strategyName){
-            case NONE:
-                strategy = PageLoadStrategy.NONE;
-                break;
-            case EAGER:
-                strategy = PageLoadStrategy.EAGER;
-                break;
-            case NORMAL:
-                strategy = PageLoadStrategy.NORMAL;
-                break;
-            default:
-                throw new RuntimeException("Некорректное наименование загрузки стратегии браузера!");
-        }
+        PageLoadStrategy strategy = LoadingStrategy.loadStrategy(strategyName);
 
         WebDriverManager.chromedriver().setup();
 

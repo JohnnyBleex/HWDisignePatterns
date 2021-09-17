@@ -1,12 +1,12 @@
 package tests.tvs;
 
 import org.junit.jupiter.api.Assertions;
-import pages.TVProductPage;
+import pages.withelements.TVProductPageWithElements;;
 
 public class TVsProductPageAssert {
-    private TVProductPage page;
+    private TVProductPageWithElements page;
 
-    public TVsProductPageAssert(TVProductPage page){
+    public TVsProductPageAssert(TVProductPageWithElements page){
         this.page = page;
     }
 
