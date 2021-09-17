@@ -9,7 +9,6 @@ public class TVProductPageSteps {
     private static Logger logger = LogManager.getLogger(StartPageSteps.class);
 
     private TVProductPageWithElements tvProductPageWithElements;
-    private String actualTitle;
 
     public TVProductPageSteps(TVProductPageWithElements tvProductPage){
         this.tvProductPageWithElements = tvProductPage;

@@ -17,6 +17,11 @@ public class TVProductPageWithElements extends BasePage {
     String hertzValueXpath = "//span[text()=' 120 Гц ']";
     String backlightTypeXpath = "//a[contains(text(), 'Direct LED')]";
 
+    public void characteristicsClick(){
+        Link linkCharacteristics = new Link(eventDriver, By.xpath(characteristicsLinkXpath));
+        linkCharacteristics.click();
+    }
+
     public String getPageTitle(){
         return eventDriver.getTitle();
     }
@@ -39,10 +44,5 @@ public class TVProductPageWithElements extends BasePage {
     public String getBacklightType(){
         WebElement backlightType = eventDriver.findElement(By.xpath(backlightTypeXpath));
         return backlightType.getText();
-    }
-
-    public void characteristicsClick(){
-        Link linkCharacteristics = new Link(eventDriver, By.xpath(characteristicsLinkXpath));
-        linkCharacteristics.click();
     }
 }
