@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+// Класс ожиданий событий на странице
 public class WaitFor {
     // Ожидание драйвера браузера
     protected static WebDriverWait wait;
@@ -22,6 +23,8 @@ public class WaitFor {
         wait = new WebDriverWait(driver, timeOut, sleep);
     }
 
+    // Инициализация ожидания драйвера браузера
+    // Установка таймаута с игнорированием исключения
     public static void initFluentWait(WebDriver driver, Duration timeOut, Duration sleep) {
         fluentWait = new FluentWait<>(driver)
                 .withTimeout(timeOut)
@@ -65,6 +68,7 @@ public class WaitFor {
                 webDriver.findElement(by).getText().contains(product));
     }
 
+    // Ожидание кликабельности элемента по локатору
     public static void firstProductMustBe(By by) {
         fluentWait.until(ExpectedConditions.elementToBeClickable(by));
     }

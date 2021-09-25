@@ -2,8 +2,9 @@ package models.valueobjects;
 
 import java.io.Serializable;
 
+// Класс объект-значение Диагонаь
 public class DiagonalRange implements Serializable {
-    private int diagonalRange;
+    private int diagonalRange; // Диарозон диагонали
 
     public DiagonalRange() {
 
@@ -17,10 +18,12 @@ public class DiagonalRange implements Serializable {
         }
     }
 
+    // Геттер
     public int getDiagonalRange(){
         return this.diagonalRange;
     }
 
+    // Переопределенный метод сравнения
     public boolean equals(DiagonalRange otherDiagonalRange){
         return this.diagonalRange == otherDiagonalRange.diagonalRange;
     }

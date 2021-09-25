@@ -2,8 +2,9 @@ package models.valueobjects;
 
 import java.io.Serializable;
 
+// Класс объект-значение Тип подсветки
 public class TypeBackLight implements Serializable {
-    private String typeBackLight;
+    private String typeBackLight; // Тип подсветки
 
     public TypeBackLight() {
 
@@ -17,10 +18,12 @@ public class TypeBackLight implements Serializable {
         }
     }
 
+    // Геттер
     public String getBackLight() {
         return this.typeBackLight;
     }
 
+    // Переопределенный метод сравнения
     public boolean equals(TypeBackLight otherBackLight) {
         return this.typeBackLight.equals(otherBackLight.typeBackLight);
     }

@@ -1,20 +1,24 @@
 package webdriverfactory;
 
+// Имена браузеров
 public enum BrowserName {
-    CHROME("chrome"),
-    FIREFOX("firefox");
+    // Имена браузеров
+    CHROME("chrome"),    // Google Chrome
+    FIREFOX("firefox");  // Mozilla Firefox
 
-    private String browserName;
+    private String browserName; // Имя браузера
 
     private BrowserName(String browserName) {
         this.browserName = browserName;
     }
 
+    // Переопределенный метод toString()
     @Override
     public String toString() {
         return String.valueOf(this.browserName);
     }
 
+    // Возврат константы по строковому значению константы
     public static BrowserName fromString(String browserName) {
         if (browserName != null) {
             for (BrowserName name : BrowserName.values()) {
@@ -26,6 +30,7 @@ public enum BrowserName {
         return null;
     }
 
+    // Получение имени браузера
     public String getBrowserName() {
         return this.browserName;
     }

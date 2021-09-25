@@ -2,8 +2,9 @@ package models.valueobjects;
 
 import java.io.Serializable;
 
+// Класс объект-значение Производитель
 public class Company  implements Serializable {
-    private String company;
+    private String company; // Производитель
 
     public Company(){
 
@@ -17,10 +18,12 @@ public class Company  implements Serializable {
         }
     }
 
+    // Геттер
     public String getCompany() {
         return this.company;
     }
 
+    // Переопределенный метод сравнения
     public boolean equals(Company otherCompany){
         return this.company.equals(otherCompany.company);
     }

@@ -9,10 +9,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.withelements.TVAndMultimediaPageWithElements;
 
+// Шаги на странице "ТВ и Мультимедиа"
 public class TVAndMultimediaPageSteps {
     private static Logger logger = LogManager.getLogger(StartPageSteps.class);
 
-    private TVAndMultimediaPageWithElements tvAndMultimediaPageWithElements;
+    private TVAndMultimediaPageWithElements tvAndMultimediaPageWithElements; // Ссылка на объект класса "TVAndMultimediaPageWithElements"
 
     public TVAndMultimediaPageSteps(TVAndMultimediaPageWithElements tvAndMultimediaPage){
         this.tvAndMultimediaPageWithElements = tvAndMultimediaPage;

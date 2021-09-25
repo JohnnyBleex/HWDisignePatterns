@@ -7,16 +7,17 @@ import models.valueobjects.TypeBackLight;
 
 import java.io.Serializable;
 
+// Класс Телевизор
 public class Television implements Serializable {
-    private Company company;
-    private String model;
-    private DiagonalRange diagonalRangeFrom;
-    private DiagonalRange diagonalRangeUpTo;
-    private int diagonal;
-    private ScreenRefreshRate screenRefreshRate;
-    private int refreshRate;
-    private TypeBackLight typeBackLight;
-    private String backLight;
+    private Company company;                     // Производитель
+    private String model;                        // Модель
+    private DiagonalRange diagonalRangeFrom;     // Диагональ от
+    private DiagonalRange diagonalRangeUpTo;     // Диагональ до
+    private int diagonal;                        // Диагональ
+    private ScreenRefreshRate screenRefreshRate; // Частота обновления экрана
+    private int refreshRate;                     // Частота обновления
+    private TypeBackLight typeBackLight;         // Тип подсветки
+    private String backLight;                    // Подсветка
 
     public Television(){
 
@@ -31,6 +32,8 @@ public class Television implements Serializable {
         this.typeBackLight = typeBackLight;
     }
 
+    // Сеттеры и геттеры
+    // Производитель
     public void setCompany(Company company) {
         this.company = company;
     }
@@ -39,6 +42,7 @@ public class Television implements Serializable {
         return this.company;
     }
 
+    // Модель
     public void setModel(String model){
         this.model = model;
     }
@@ -47,6 +51,7 @@ public class Television implements Serializable {
         return this.model;
     }
 
+    // Диагональ от
     public void setDiagonalRangeFrom(DiagonalRange diagonalRangeFrom) {
         this.diagonalRangeFrom = diagonalRangeFrom;
     }
@@ -55,6 +60,7 @@ public class Television implements Serializable {
         return this.diagonalRangeFrom;
     }
 
+    // Диагональ до
     public void setDiagonalRangeUpTo(DiagonalRange diagonalRangeUpTo) {
         this.diagonalRangeUpTo = diagonalRangeUpTo;
     }
@@ -63,6 +69,7 @@ public class Television implements Serializable {
         return this.diagonalRangeUpTo;
     }
 
+    // Диагональ
     public void setDiagonal(int diagonal){
         this.diagonal = diagonal;
     }
@@ -71,6 +78,7 @@ public class Television implements Serializable {
         return this.diagonal;
     }
 
+    // Частота обновления экрана
     public void setScreenRefreshRate(ScreenRefreshRate screenRefreshRate) {
         this.screenRefreshRate = screenRefreshRate;
     }
@@ -79,6 +87,7 @@ public class Television implements Serializable {
         return this.screenRefreshRate;
     }
 
+    // Частота обновления
     public void setRefreshRate(int refreshRate) {
         this.refreshRate = refreshRate;
     }
@@ -87,6 +96,7 @@ public class Television implements Serializable {
         return this.refreshRate;
     }
 
+    // Тип подсветки
     public TypeBackLight getTypeBackLight() {
         return typeBackLight;
     }
@@ -95,6 +105,7 @@ public class Television implements Serializable {
         this.typeBackLight = typeBackLight;
     }
 
+    // Подсветка
     public String getBackLight() {
         return backLight;
     }

@@ -5,10 +5,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import pages.withelements.TVProductPageWithElements;
 
+// Шаги на странице "Продукт. Телевизор"
 public class TVProductPageSteps {
     private static Logger logger = LogManager.getLogger(StartPageSteps.class);
 
-    private TVProductPageWithElements tvProductPageWithElements;
+    private TVProductPageWithElements tvProductPageWithElements; // Ссыка на объект класса TVProductPageWithElements
 
     public TVProductPageSteps(TVProductPageWithElements tvProductPage){
         this.tvProductPageWithElements = tvProductPage;

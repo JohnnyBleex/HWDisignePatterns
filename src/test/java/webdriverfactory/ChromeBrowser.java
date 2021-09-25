@@ -9,11 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
+// Драйвера браузера "Google Chrome"
 public class ChromeBrowser {
+    // Получение экземпляра драйвера браузера "Google Chrome"
     public static WebDriver getDriver(PageLoadStrategyName strategyName){
-        PageLoadStrategy strategy = LoadingStrategy.loadStrategy(strategyName);
+        PageLoadStrategy strategy = LoadingStrategy.loadStrategy(strategyName); // Получение стратегги загрузки через имя
 
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup(); // Настройка исполняемого файла драйвера
 
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);

@@ -9,11 +9,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
+// Драйвера браузера "Mozilla Firefox"
 public class FirefoxBrowser {
+    // Получение экземпляра драйвера браузера "Mozilla Firefox"
     public static WebDriver getDriver(PageLoadStrategyName strategyName){
-        PageLoadStrategy strategy = LoadingStrategy.loadStrategy(strategyName);
+        PageLoadStrategy strategy = LoadingStrategy.loadStrategy(strategyName); // Получение стратегги загрузки через имя
 
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.firefoxdriver().setup(); // Настройка исполняемого файла драйвера
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);

@@ -12,9 +12,11 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
+// Класс
 public class ScreenShotPage extends BaseTest {
     private static final Logger logger = LogManager.getLogger(ScreenShotPage.class);
 
+    // Сделать скриншот страници
     public static void getScreenShot(String path) {
         try {
             Sleeper.SYSTEM_SLEEPER.sleep(Duration.ofSeconds(2));

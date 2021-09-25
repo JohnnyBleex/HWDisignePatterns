@@ -2,8 +2,9 @@ package models.valueobjects;
 
 import java.io.Serializable;
 
+// Класс объект-значение Частота обновления
 public class ScreenRefreshRate implements Serializable {
-    private int screenRefreshRate;
+    private int screenRefreshRate; // Частота обновления
 
     public ScreenRefreshRate(){
 
@@ -17,10 +18,12 @@ public class ScreenRefreshRate implements Serializable {
         }
     }
 
+    // Геттер
     public int getScreenRefreshRate() {
         return this.screenRefreshRate;
     }
 
+    // Переопределенный метод сравнения
     public boolean equals(ScreenRefreshRate otherScreenRefreshRate){
         return this.screenRefreshRate == otherScreenRefreshRate.screenRefreshRate;
     }

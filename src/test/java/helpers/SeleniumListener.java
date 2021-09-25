@@ -44,4 +44,12 @@ public class SeleniumListener implements WebDriverListener {
     public void afterGetTitle(WebDriver driver, String result) {
         logger.info("После получения титула: " + "\"" + result + "\"");
     }
+
+    public void beforeGetWindowHandle(WebDriver driver) {
+        logger.info("До получения дескриптора окна" + "<" + driver + ">");
+    }
+
+    public void afterGetWindowHandle(WebDriver driver, String result) {
+        logger.info("После получения дескриптора окна" + "<" + driver + ">" + "\"" + result + "\"");
+    }
 }

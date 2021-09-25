@@ -19,6 +19,7 @@ import tests.BaseTest;
 public class TVProductPageWithElements_Test extends BaseTest {
     @Test
     public void selectedProduct_Is_TVLEDSamsungQE75Q950TSUXRUGrey(){
+        // 1. Arrange
         String company = "Samsung";
         int diagonalRangeFrom = 60;
         int diagonalRangeUpTo = 80;
@@ -30,12 +31,16 @@ public class TVProductPageWithElements_Test extends BaseTest {
                 new DiagonalRange(diagonalRangeUpTo),
                 new ScreenRefreshRate(screenRefreshRate),
                 new TypeBackLight(typeBackLight))
-                .setModel("QE75Q950TSUXRU").setDiagonal(75)
-                .setRefreshRate(120).setBackLight("Direct LED");
+                .setModel("QE75Q950TSUXRU")
+                .setDiagonal(75)
+                .setRefreshRate(120)
+                .setBackLight("Direct LED");
         Television television = builder.build();
 
+        // 2. Act
         TVProductPageSteps tvProductPageSteps = getProduct(television);
 
+        // 3. Assert
         String expectedTitle = "Технические характеристики 75\" (189 см) Телевизор LED Samsung QE75Q950TSUXRU серый | 8165296 . Интернет-магазин DNS";
         String expectedModel = "Samsung";
         String expectedInches = "75";
@@ -49,6 +54,7 @@ public class TVProductPageWithElements_Test extends BaseTest {
         tVsProductPageAssert.pageBackLight(expectedBackLight);
     }
 
+    // Получение страницы с продуктом
     public TVProductPageSteps getProduct(Television television){
         StartPageSteps startPageSteps = new StartPageSteps(new StartPageWithElements(driver));
         startPageSteps.clickCityYes();
